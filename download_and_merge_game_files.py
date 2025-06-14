@@ -102,8 +102,8 @@ def merge_files(path, file_list, output_file):
             
 
 if __name__ == "__main__":
-    username = "freakwhensee"  # Replace with your username
-    email = "jmlevy31@gmail.com" # Replace with your chess.com email. This is required or you will get a 403 error
+    username = "USERNAME"  # Replace with your username
+    email = "EMAIL@gmail.com" # Replace with your chess.com email. This is required or you will get a 403 error
     year = "2025"  # Specify the year
     months = ['03','04','05']  # Specify the months (e.g., "01" for January, "05" for May)
 

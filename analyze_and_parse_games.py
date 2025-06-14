@@ -25,13 +25,13 @@ async def analyze_game(game, stockfish_path):
         black_blunders (list): list containing the move numbers where black blundered
         move_num (int): the total number of moves in the game
     """
-    mistake = 100
-    blunder = 300
+    mistake = 100 #defining mistake as a centipawn loss of 100 or more
+    blunder = 300 #defining blunder as a centipawn loss of 300 or more
 
     board = game.board()
     transport, engine = await chess.engine.popen_uci(stockfish_path)
 
-    await engine.configure({"Threads": 10})
+    await engine.configure({"Threads": 10}) #Uitilizing 10 threads, you can modify this number depending on the threads available on your CPU. 
 
     print(f"Analyzing game: {game.headers['Event']} - {game.headers['White']} vs {game.headers['Black']}")
 
@@ -211,7 +211,7 @@ def parse_pgn_to_csv(pgn_path, txt_path, user_name, stockfish_path, csv_path="ch
 if __name__ == "__main__":
     input_txt_file = "pgn_downloads/combined_txt_file.txt" #default file location, update if necessary. need the .txt version as it has the acurracies while the .pgn doesn't...
     input_pgn_file = "pgn_downloads/combined_pgn_file.pgn" #default file location, update if necessary. need the .pgn version in order to utilize chess.engine...
-    user_name = "FreakWhenSee" #update for your username. 
+    user_name = "USERNAME" #update for your username. 
     stockfish_path = "C:/stockfish/stockfish-windows-x86-64-avx2.exe" #update for your local stockfish path.
     output_csv_file = "Chess_database.csv"
 
